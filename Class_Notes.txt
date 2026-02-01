@@ -488,12 +488,390 @@ Day - 2 | 1st Feb. 2026
 		
 		-- Access to Github & DockerHub 
 				- https://github.com/
+				
 				- https://hub.docker.com/
 				
 				- https://github.com/Edu-MLOps-Feb26/Training_Documents
+				
+				
 		
 		-- Install Visual Studio Code
-		
+				- https://code.visualstudio.com/download
+				
 		-- Install Git Client on Local Machine
+		
+			
+	- Version Control System using git ::::
 	
+	- What is Version Control System :::
 	
+		-> Used to Version control the Source Code Changes 
+		-> To Track the Source Code Changes
+		
+
+	-> MLProject 
+	
+		- Web Application
+		- APIs
+		
+	-> Python Program 
+	
+		mywebapp.py 
+		
+		--
+		-
+		-
+		-
+		-
+		-
+		
+		save as mywebapp.py 
+		
+		test the program 	-- Logical Unit of Task 
+		
+		mywebapp.py 
+		
+		--
+		-
+		-
+		-
+		-
+		-
+		asdf
+		asdfas
+		dfa
+		sfd
+		asdf
+		
+		save as mywebapp.py 				mywebapp.py_v1.0
+		
+		
+		test the program 	-- Logical Unit of Task 
+		
+
+		mywebapp.py 
+		
+		--
+		-
+		-
+		-
+		-
+		-
+		asdf
+		asdfas
+		dfa
+		sfd
+		asdf
+		
+		save as mywebapp.py 				mywebapp.py_v1.1
+		save as mywebapp.py 				mywebapp.py_v1.2		
+		save as mywebapp.py 				mywebapp.py_v1.3
+		save as mywebapp.py 				mywebapp.py_v1.4
+		save as mywebapp.py 				mywebapp.py_v1.5
+		
+		test the program 	-- Logical Unit of Task		
+		
+		
+	-> Install git client on Local Machine 
+	
+	-> GIT ::
+	
+		-> Git is a open-source Distributed Version Control System
+		-> Used to Version control the Source Code Changes 
+		-> To Track the Source Code Changes	
+		-> Used to perform Parallel Development using Git Branching Techniques
+		
+	-> Working with GIT :
+	
+		- Install git client on Local Machine 
+		- git (vs) github
+		- Core git Concepts 
+		
+	
+	Versioning:
+	
+		Source_Code Changes 	:	Application Artifacts		:		Application Images 		:		Datasets for ML Model
+		
+		GITHUB					:	Jfrog						:		DockerHub 				:		S3  
+		
+		
+	GIT ::
+	
+		What is Distributed VCS ?
+		
+		- Enhancement/Bugfix Project
+		- New Product development
+		
+		
+		GIT Workflow ::
+		
+		Local Machine 																				Remote Server
+		
+		Install git client 
+		
+		Working Directory			--> Staging Area 			--> 	Local Repository				Remote Repository
+		
+		mywebapp.py		  ------------->  mywebapp.py  -------------->	mywebapp.py_v1.0 	----------->  mywebapp.py_v1.0 
+							git add 					git commit 							 git push
+		mywebapp.py		  ------------->  mywebapp.py  -------------->	mywebapp.py_v1.1 	----------->  mywebapp.py_v1.1 
+							git add 					git commit 							 git push
+		mywebapp.py		  ------------->  mywebapp.py  -------------->	mywebapp.py_v1.2 	----------->  mywebapp.py_v1.2 
+							git add 					git commit 							 git push
+		
+		
+		Git Cli Commands :::
+			
+			git clone 		-> To Copy/Clone the entire remote repository to Local Machine
+			
+			git add 		-> To Add the changes from working directory to staging area 
+			
+			git commit 		-> To Commit the changes from staging area to local repository
+			
+			git push		-> To Push the changes from local Repository to Remote Repository
+		
+			git fetch/pull :
+			
+				-> Both Git fetch and pull are used handle the incremental changes from remote repository.
+				
+				Git fetch :
+				
+					- It is used to just check for the incremental changes from remote repository, if any incremental changes exist, it will update the details of the changes only in local repository. Git fetch will never Update the Working Directory.
+					
+					- Do explicit merge to update the Working Directory					
+					
+			
+				git Pull :
+				
+					- It is used to check for the incremental changes from remote repository, if any incremental changes exist, it will update the details of the changes in local repository as well as in the Working Directory.
+					
+					git pull => git fetch + git merge 
+					
+			
+			fork 			->	To Copy the one remote repository to another remote repository	
+			
+			
+			git init 		-> 	To Initialize the Local Git Repository 
+								It will create .git - GIT! Directory
+								It will create a default branch - master/main 
+								
+								
+	-> Install git client on Local Machine :::
+	
+		https://git-scm.com/install/windows		- Git for Windows/x64 Setup.
+		
+			-> git bash 		***
+			
+			-> git CMD
+			
+			-> git GUI
+			
+			
+			Mac/Linux Open Terminal 
+			
+				git --version 
+				
+			Project Workspace Directory:
+			
+			
+				cd d:
+				mkdir Edu_MLOps_Feb26_Projects
+				cd Edu_MLOps_Feb26_Projects
+				mkdir Repo1
+				mkdir Repo2 
+				cd Repo1 
+					git init 
+				
+				
+		
+		https://git-scm.com/install/linux
+		
+		
+		- Create and work with Local Repositories
+		
+			- git init 
+		
+		
+		Local Machine 																				Remote Server
+		
+		Install git client 
+		
+		Working Directory			--> Staging Area 			--> 	Local Repository				Remote Repository
+		
+		file1.txt		  ------------->  file1.txt  -------------->	 file1.txt 	----------->   
+							git add 					git commit
+		
+		
+		
+		git init 
+		
+		
+		git status 		--> get the current status of repository
+		
+		ls 				--> Linux Command to get the list of files and folders from Working Directory
+		
+		git ls-files 	--> Git Cli Command to get the list of files and folders that are being tracked by git.
+		
+		git log 
+		
+		
+		
+		
+		Git Configurations :::
+		
+		- git Global Configuration 
+		
+			- As a best practice, before making a very initial commit setup the user name and email_id using Global Configuration.
+			
+			
+			git config --global user.name "Loksai"
+			
+			git config --global user.email "Loksai@adf.com"			
+			
+		
+		One time activity:
+		
+				cd d:
+				mkdir Edu_MLOps_Feb26_Projects
+				cd Edu_MLOps_Feb26_Projects
+				mkdir Repo1 
+				cd Repo1 
+					git init
+						git config --global user.name "Loksai"						
+						git config --global user.email "Loksai@adf.com"							
+						echo "rec1" >> f1.txt
+						git add f1.txt 						
+						git commit -m "Created f1.txt"
+						
+						
+		git add ::
+		
+			git add fi1e1.txt 
+			
+			git add file1.txt file2.txt 
+			
+			git add s1.java 
+			
+			git add *.py 
+			
+			git add .								# '.' denoted all the files
+					
+		
+		
+		Unstage:
+		
+			git rm --cached f1.txt 			# Remove the changes from staging area and take the changes back to working directory
+		
+			git rm -f f1.txt				# Permanently remove the file
+		
+		
+Next :
+
+			Commits
+			
+			.gitignore 
+			
+			branches 
+			
+			Remote Repos 
+			
+			
+  501  cd d:
+  502  git --version
+  503  mkdir Edu_MLOps_Feb26_Projects
+  504  cd Edu_MLOps_Feb26_Projects
+  505  pwd
+  506  mkdir testrepo1
+  507  cd testrepo1/
+  508  pwd
+  509  clear
+  510  ls -a
+  511  git init
+  512  ls
+  513  ls -a
+  514  cd .git/
+  515  ls
+  516  cd ..
+  517  clear
+  518  ls
+  519  git status
+  520  echo "rec1" >> f1.txt
+  521  git status
+  522  ls
+  523  git ls-files
+  524  git add f1.txt
+  525  git status
+  526  git ls-files
+  527  git commit -m "Created file.txt"
+  528  git status
+  529  ls
+  530  git ls-files
+  531  git log
+  532  ls
+  533  echo "rec1" >> file2.txt
+  534  git status
+  535  git add file2.txt
+  536  git status
+  537  git commit -m "Created file2.txt"
+  538  git log
+  539  cd ..
+  540  ls
+  541  ls
+  542  mkdir testrepo2
+  543  cd testrepo2
+  544  clear
+  545  git init
+  546  echo "rec1" >> f1.txt
+  547  git add f1.txt
+  548  git commit -m "Created f1.txt"
+  549  clear
+  550  ls
+  551  git log
+  552  ls
+  553  echo "rec1" >> s1.txt
+  554  echo "rec1" >> s2.txt
+  555  echo "rec1" >> s3.txt
+  556  echo "rec1" >> q1.java
+  557  echo "rec1" >> q2.java
+  558  echo "rec1" >> q3.java
+  559  echo "rec1" >> a1.py
+  560  echo "rec1" >> a2.py
+  561  echo "rec1" >> a3.py
+  562  echo "rec1" >> w1.doc
+  563  echo "rec1" >> w2.doc
+  564  echo "rec1" >> w3.doc
+  565  clear
+  566  ls
+  567  git status
+  568  git add a1.py
+  569  git status
+  570  git add q1.java s1.txt
+  571  git status
+  572  git add *.java a2.py
+  573  git status
+  574  git add .
+  575  git status
+  576  git rm --cached a1.py
+  577  git status
+  578  git add .
+  579  git status
+  580  ls
+  581  git ls-files
+  582  git rm -f a1.py
+  583  ls
+  584  git ls-files
+  585  history
+		
+		
+		
+		
+		
+		
+		
+		
+		GITHUB Workflow 
+		
+		GIT Cli Commands 
+		
+		Git Branching Techniques & Strategies
+		
+		Remote Git Repository using GITHub
