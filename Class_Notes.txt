@@ -2180,3 +2180,237 @@ Day - 5 | 14th Feb. 2026
 			
 			
 			
+		
+#########################
+Day - 6 | 15th Feb. 2026
+#########################		
+		
+	- Work with DockerHub - Account/Repos		# https://hub.docker.com/
+	
+	- Install Docker Engine 
+		- Launch EC2 Instance - Ubuntu AMI v22.04
+		
+		- Connect using SSH Agent 
+
+
+		sudo -i 
+
+		apt update -y 
+
+		apt install docker.io -y				# Install Docker
+
+
+
+	- Work with Docker Cli Commands 
+	
+		--> Use Existing Image from DockerHub
+	
+			docker images 			# To get the list of images on the local machine
+
+			docker ps 				# To get the list of active containers on the local machine	
+
+			docker ps -a 			# To get the list of active & inactive containers on the local machine	
+			
+			
+			docker pull ubuntu 		# Download an Container Image from Docker Hub
+			
+				- Syntax: 	docker pull <image>:<tag/version_ID>
+							docker pull <image>							# Always refer to the latest version
+	
+	
+			docker run <image_name>	# To Create a New Container based on the Image Name.
+									# Run/Execute the Container
+			
+			
+			Modes of Execution :::
+
+				- Attached Mode / Foreground Mode 		# Default
+				
+					Eg.: docker run ubuntu sleep 5
+				
+				- Detached Mode / Background Mode 
+				
+					Eg.: docker run -d ubuntu sleep 5
+				
+				- Interactive Mode :::
+				
+					Eg.: docker run -it ubuntu bash
+				
+		
+			docker start <container_id>		# Start the Container 
+			
+			Login to running Container :
+			
+				- docker exec -it <container_id> bash 	# To Login to running container
+			
+				- exit 									# To Logoff from the running container 
+
+			docker stop <container_id>		# Stop the running Container 
+			
+		
+		Working with Web Servers with-in Docker Container.
+		
+		Docker Networking :
+		
+		Port Mapping / Port Binding :::		# To expose the container application to internet
+		
+		
+			Syntax : -p <host_port>:<container_port>
+			
+			Eg.: 
+				docker run -it -p 8080:8080 tomcat:8.0
+			
+				docker run -it -p 8089:8080 tomcat:8.0
+			
+			
+		Access the Container application using the <External_IP/Public_IP>:<host_port>
+		
+	
+		Remove Container :
+		
+			docker rm <container_id>
+		
+		Remove Image :
+		
+			docker rmi <image_id>
+			
+	
+	--> Create New Images ::::
+		
+		- Docker Commit ::	# Infra-Structure perspective
+		
+			- It used to create a new Container Image based on the existing Container reference
+			
+			Syntax: 
+			
+				docker commit <container_id> <DockerHub_Repository_Name>/<New_Container_Image>:<tag/version_ID>
+			Eg.: 
+				
+				docker commit 922ee3d65714 loksaieta/tempimg:v1.0
+				
+		
+		
+		
+		
+		- Docker Build ::	# Development/Deployment Process 
+		
+			- It used to create a new Container Image based on the Dockerfile reference
+			- Dockerfile composed of Dockerfile Instructions 
+		
+		
+			
+		vi Dockerfile 
+		
+		FROM ubuntu
+		RUN apt update -y 
+		RUN apt install git -y 
+		
+			- 
+
+			Syntax: 
+			
+				docker build -t <DockerHub_Repository_Name>/<New_Container_Image>:<tag/version_ID> .		# '.' denotes Dockerfile reference
+			Eg.: 
+				
+				docker build -t loksaieta/dummyimg .			
+			
+			
+	
+		- Publish the Container Image to Container Registry ::
+		
+			- Login to Container Registry using Docker CLI Commands 
+			
+				- DockerHUB Login_ID
+				
+					docker login -u loksaieta
+				
+				- PAT - (Password)
+				
+					asdasdasd
+					
+					
+			- Push the Container Image to DockerHub :
+			
+				docker push <DockerHub_Repository_Name>/<New_Container_Image>:<tag/version_ID>
+		
+				Eg.: 
+				
+					docker push loksaieta/tempimg:v1.0
+					
+			
+	
+		Dockerfile Instructions :::
+		
+		
+			FROM 				# To identify the base Image 
+			
+			RUN					# To Run/Execute and Package 
+		
+			COPY				# To Copy the files from Host Volume to the Container Volume 
+		
+			CP					# To Copy the files within the Container Volumes 
+			
+			ADD 				# To Copy the files from external URL/Host Volume to the Container Volume 
+			
+			WORKDIR				# To set the current working directory within the Container 
+			
+			ENV 				# To set the Enviroment Variable
+			
+			EXPOSE				# Set the Container Port 
+			
+			CMD					# To set the Start-up task/Command for the Container 
+								# This can be modified at run time 
+								
+			ENTRYPOINT			# To set the Start-up task/Command for the Container 
+								# This cannot be modified at run time 				
+
+
+		
+		
+	
+	Container Orchestration using Docker :::
+	
+		- Docker-compose		# To run Multiple containers as service 
+		- Docker Swarm 
+	
+	Container Orchestration using Kubernetes :::
+	
+		- Kubernetes is an Open-Source Container Orchestration Tool 
+		- To Ensure High availability of the Container and Applications
+		- It creates replicas of Containers/Pods 
+		- Kubernetes support Auto-Scaling and Load Balancing 
+		- Self-healing 
+		- Upgrade/Downgrade of application services can be done without any downtime
+		- Using Deployment Strategies : Rolling-Update Strategy 
+	
+	Product: 
+	
+		mymlproject:v1.0  --> LIVE Version 
+		
+		mymlproject:v2.0  --> How to upgrade without any downtime ?
+	
+	
+		
+			
+		
+	- 3 tier application :
+	
+		front-end layer			c1,c1,c1 
+			
+		application layer 		c2,c2,c2 
+		
+		database layer			c3,c3,c3 
+		
+	
+Next :
+
+		Build ML Model 
+		
+		DVC/MLFlow/Streamlit/Fast-API
+		
+		S3 Integration 
+		
+		DockerHub Integration 
+		
+		Deployment of Kubernetes 
+			
